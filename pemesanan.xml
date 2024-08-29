@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_pemesanan_ruangan_tree" model="ir.ui.view">
+        <field name="name">pemesanan.ruangan.tree</field>
+        <field name="model">pemesanan.ruangan</field>
+        <field name="arch" type="xml">
+            <tree string="Pemesanan Ruangan">
+                <field name="nomor_pemesanan"/>
+                <field name="ruangan_id"/>
+                <field name="nama_pemesanan"/>
+                <field name="tanggal_pemesanan"/>
+                <field name="status_pemesanan"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_pemesanan_ruangan_form" model="ir.ui.view">
+        <field name="name">pemesanan.ruangan.form</field>
+        <field name="model">pemesanan.ruangan</field>
+        <field name="arch" type="xml">
+            <form string="Pemesanan Ruangan">
+                <sheet>
+                    <group>
+                        <field name="nomor_pemesanan"/>
+                        <field name="ruangan_id"/>
+                        <field name="nama_pemesanan"/>
+                        <field name="tanggal_pemesanan"/>
+                        <field name="status_pemesanan"/>
+                        <field name="catatan_pemesanan"/>
+                    </group>
+                    <footer>
+                        <button name="action_proses_pemesanan" type="object" string="Proses Pemesanan" class="oe_highlight"/>
+                        <button name="action_draft" type="object" string="Set to Draft" class="oe_link"/>
+                        <button name="action_ongoing" type="object" string="Set to On Going" class="oe_link"/>
+                        <button name="action_done" type="object" string="Set to Done" class="oe_link"/>
+                        <button name="action_cancel" type="object" string="Cancel" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_pemesanan_ruangan" name="Pemesanan Ruangan" sequence="20"/>
+
+    <act_window id="action_pemesanan_ruangan"
+                name="Pemesanan Ruangan"
+                res_model="pemesanan.ruangan"
+                view_mode="tree,form"
+                menu_id="menu_pemesanan_ruangan"/>
+</odoo>
