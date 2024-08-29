@@ -1,2 +1,1 @@
-from . import ruangan
-from . import pemesanan
+from . import master_ruangan
