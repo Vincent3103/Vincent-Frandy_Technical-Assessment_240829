@@ -45,3 +45,22 @@ class PemesananRuangan(models.Model):
             ])
             if exist:
                 raise exceptions.ValidationError('Ruangan sudah dipesan pada tanggal ini.')
+
+    def action_proses_pemesanan(self):
+        for record in self:
+            if record.status_pemesanan == 'draft':
+                record.write({'status_pemesanan': 'ongoing'})
+            elif record.status_pemesanan == 'ongoing':
+                record.write({'status_pemesanan': 'done'})
+
+    def action_draft(self):
+        self.write({'status_pemesanan': 'draft'})
+
+    def action_ongoing(self):
+        self.write({'status_pemesanan': 'ongoing'})
+
+    def action_done(self):
+        self.write({'status_pemesanan': 'done'})
+
+    def action_cancel(self):
+        self.write({'status_pemesanan': 'cancel'})
