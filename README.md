@@ -12,23 +12,17 @@ Python 3.x terinstal di sistem Anda.
 Instalasi
 Clone Repository atau Unduh File
 
-sh
-Copy code
 git clone <URL_REPOSITORY>
 Atau unduh file skrip Python langsung dari repository atau sumber distribusi.
 
 Penggunaan
 Pastikan Anda berada di direktori yang sama dengan skrip skill_level.py, lalu jalankan skrip dengan perintah berikut:
 
-sh
-Copy code
 python skill_level.py
 Masukkan Input
 
 Skrip ini akan meminta Anda untuk memasukkan input dalam format berikut:
 
-mathematica
-Copy code
 N M
 A1 A2 A3 ... AN
 B1 B2 B3 ... BN
@@ -38,7 +32,6 @@ A adalah daftar tingkat kemahiran masing-masing lawan.
 B adalah daftar increment untuk setiap lawan.
 Contoh Input:
 
-Copy code
 3 10
 5 7 9
 3 2 4
